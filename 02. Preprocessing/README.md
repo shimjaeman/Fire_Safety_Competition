@@ -70,35 +70,10 @@
 
 <details><summary><h3>Derived_Variables</h3></summary>
   
-- **`가설`** 
-  - 65세 이상 고령자의 안전사고가 매년 증가하고 있으므로 발생 횟수에 영향을 미칠 것이다.
+- **`가설`**  : 65세 이상 고령자의 안전사고가 매년 증가하고 있으므로 발생 횟수에 영향을 미칠 것이다.
 
-- **`AVRG_TMPRT`** : 평균기온(°C)에 관한 정보
-  
-- **`DAY_RAINQTY`** : 강수량(mm)에 관한 정보
+- ![65세 이상 고령자 사고현황](https://user-images.githubusercontent.com/95950967/212539956-2cf13929-dea0-497c-a936-32711dd80ed3.png)
 
-- **`DAY_MSNF`** : 적설량(cm)에 관한 정보 
-  
-- **`AVRG_WS`** : 평균 풍속(m/s)에 관한 정보
-
-- **`AVRG_HUMIDITY`** : 평균 습도(%)에 관한 정보
-    
-</details>
-
-<details><summary><h3>Derived_Variables</h3></summary>
-  
-- **`가설`** 
-  - 65세 이상 고령자의 안전사고가 매년 증가하고 있으므로 발생 횟수에 영향을 미칠 것이다.
-
-- **`AVRG_TMPRT`** : 평균기온(°C)에 관한 정보
-  
-- **`DAY_RAINQTY`** : 강수량(mm)에 관한 정보
-
-- **`DAY_MSNF`** : 적설량(cm)에 관한 정보 
-  
-- **`AVRG_WS`** : 평균 풍속(m/s)에 관한 정보
-
-- **`AVRG_HUMIDITY`** : 평균 습도(%)에 관한 정보
     
 </details>
 
@@ -111,6 +86,57 @@
 - **`비대칭 정규화 수행`**
   - ![Box-Cox를 Transform 한 후 분포 확인](https://user-images.githubusercontent.com/95950967/212539505-3a8b46c0-1787-4133-abbf-d42589abdb40.png)
     
+</details>
+
+<details><summary><h3>Final_Preprocessing</h3></summary>
+  
+- **`데이터 스케일링`** 
+  - ![스케일링 후 변수 분포 확인](https://user-images.githubusercontent.com/95950967/212539746-a8c1935c-7ed1-4b21-b61a-4d3774b249cc.png)
+
+  
+- **`모델에 사용하는 최종 독립 변수`**
+  - MONTH : 월
+  - DAY : 일
+  - WEEKDAY : 요일
+  - HOLIDAY : 공휴일
+  - SEASON_SE_NM : 계절
+  - AVRG_TMPRT : 평균기온(°C)	
+  - DAY_RAINQTY : 일강수량(mm)
+  - DAY_MSNF : 일적설량(cm)
+  - AVRG_WS : 평균 풍속(m/s)
+  - AVRG_HUMIDITY : 평균 습도(%)
+  - INDUSTRIAL_CNT : 격자내 산업단지 개수
+  - BAR_CNT : 격자내 유흥업소 개수
+  - SENIOR_CENTER_CNT : 격자내 경로당 개수
+  - RESTAURANT_CNT : 격자내 식당 개수
+  - BULID_PERMIT_CNT : 격자내 건축허가 개수
+  - ACCIDENT_AREA_CNT : 격자내 사고건수
+  - ALL_POP : 전체 연령(65세 미만) 유동인구
+  - ELDER_POP : 65세 이상 유동인구
+  - GRID_ID : 격자 ID    
+  
+- **`모델에 사용하는 최종 종속 변수`**
+  - MCHN_ACDNT_OCRN_CNT : 기계사고발생건수
+  - ETC_OCRN_CNT : 기타발생건수
+  - BLTRM_OCRN_CNT : 둔상발생건수
+  - ACDNT_INJ_OCRN_CNT : 사고부상발생건수
+  - EXCL_DISEASE_OCRN_CNT : 질병외발생건수
+  - VHC_ACDNT_OCRN_CNT : 탈것사고발생건수
+  - HRFAF_OCRN_CNT : 낙상발생건수
+  - DRKNSTAT_OCRN_CNT : 단순주취발생건수
+  - ANML_INSCT_ACDNT_OCRN_CNT : 동물곤충사고발생건수
+  - FLPS_ACDNT_OCRN_CNT : 동승자사고발생건수
+  - PDST_ACDNT_OCRN_CNT : 보행자사고발생건수
+  - LACRTWND_OCRN_CNT : 열상발생건수
+  - MTRCYC_ACDNT_OCRN_CNT : 오토바이사고발생건수
+  - DRV_ACDNT_OCRN_CNT : 운전자사고발생건수
+  - BCYC_ACDNT_OCRN_CNT : 자전거사고발생건수
+  - POSNG_OCRN_CNT : 중독발생건수
+  - FALLING_OCRN_CNT : 추락발생건수
+
+- **`Undersampling 처리`**
+  - 데이터 그대로 진행할시 0값에 데이터가 몰려있어 undersampling 처리 후 변수명 변경
+
 </details>
 
 
