@@ -50,7 +50,7 @@
 ## 참고논문 및 사이트
   * XGBoost : https://xgboost.readthedocs.io/en/stable/
   
-  * RandomForestClassifier : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+  * RandomForestClassifier : https://www.datacamp.com/tutorial/random-forests-classifier-python
   
   * CatBoost : https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier
   
