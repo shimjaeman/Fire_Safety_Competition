@@ -35,10 +35,10 @@
  <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
  
 ## 구동 알고리즘 및 모델링 
-[Modeling](https://github.com/shimjaeman/Fire_Safety_Competition/tree/main/04.%20Modeling)
+  * Modeling Page [ [Modeling](https://github.com/shimjaeman/Fire_Safety_Competition/tree/main/04.%20Modeling) ]
 
 ## 최종 결과
-우수상 수상 https://github.com/shimjaeman/Fire_Safety_Competition/issues/1#issue-1620694810
+  * 우수상 수상 [ https://github.com/shimjaeman/Fire_Safety_Competition/issues/1#issue-1620694810 ]
 
 ## 결론 및 한계점
   * 사고가 발생한 건수가 너무 적어서 전체 데이터를 undersampling하는 것이 어려웠습니다.
