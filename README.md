@@ -39,7 +39,7 @@
 
 ## 최종 결과
  우수상 수상
-* <https://github.com/shimjaeman/Fire_Safety_Competition/files/10953304/default.PDF>
+* https://user-images.githubusercontent.com/118256029/224605951-2643a329-68b2-4ef8-a676-8b5e681f92a9.jpg
 
 ## 결론 및 한계점
   - 사고가 발생한 건수가 전체 데이터에 비해 너무 적어 다 보니 undersampling으로 처리하는데 어려움이 있었다.
