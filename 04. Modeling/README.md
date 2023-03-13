@@ -110,6 +110,7 @@ def CatBoost_model(X_train, y_train, X_test):
 </details>
 
 <details><summary><h3>모델 학습 평가</h3></summary>
+  
 - 기계사고 모델 roc_curve
   
 ![image](https://user-images.githubusercontent.com/111345469/224696625-7591d0bc-0fda-4b2e-9d15-c0771ff88ae6.png)
