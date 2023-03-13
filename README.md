@@ -21,11 +21,11 @@
   2. 외부 데이터 : 외부 정보(적설량, 노인인구 밀집 지역, 식당가 등)를 추가하여 격자별로 데이터를 가공
 
 ## 공모전 참여 인원 및 역할 
-|                이름                 |                  역할                 |
-| :-------------------------------:  | :------------------------------------: |
-|  [손용원](https://github.com/)      |      Data Analyst, Data Modeling      |
-|  [심재만](https://github.com/)      |     Project Manager, Data Scientist   |
-|  [최규광](https://github.com/)      |      Data Analyst, DATA Scientist     |
+|                이름                           |                  역할                 |
+| :-------------------------------:             | :------------------------------------: |
+|  [손용원](https://github.com/ywonson)         |      Data Analyst, Data Modeling      |
+|  [심재만](https://github.com/shimjaeman)      |     Project Manager, Data Scientist   |
+|  [최규광](https://github.com/kyukwnag)        |      Data Analyst, DATA Scientist     |
 
 ## Tech Stack
 <div align=left> 
