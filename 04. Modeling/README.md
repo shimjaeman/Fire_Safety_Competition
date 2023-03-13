@@ -29,14 +29,12 @@ for i in col: # 변수명 지정 --> data_각 사고 이름 ( ex) data_HRFAF_OCR
   
   - **사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경**
   ```python
-  from imblearn.under_sampling import NearMiss 
+from imblearn.under_sampling import NearMiss 
 nm = NearMiss()
 
 rus = RandomUnderSampler(random_state=0, sampling_strategy=0.7)
                          
-                          {
-        # 0: int(globals()["data_{}".format(i)][globals()["data_{}".format(i)]["label"] == 1].shape[0]*1.5),
-        # 1: globals()["data_{}".format(i)][globals()["data_{}".format(i)]["label"] == 1].shape[0]})
+
 
 for i in col: 
     X = globals()["data_{}".format(i)].iloc[:,:-1] 
@@ -65,6 +63,7 @@ for i in col:
 
 - **AutoML을 통해 점수를 확인하고 적합한 모델을 선정**
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
+  
 기계사고에 대한 Pycaret 결과 예시
 
 
