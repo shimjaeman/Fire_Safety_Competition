@@ -49,5 +49,9 @@
 
 ## 참고논문 및 사이트
   * XGBoost : https://xgboost.readthedocs.io/en/stable/
+  
   * RandomForestClassifier : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+  
   * CatBoost : https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier
+  
+  * AutoML : https://pycaret.gitbook.io/docs/
