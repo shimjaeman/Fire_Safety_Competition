@@ -2,8 +2,9 @@
 
 <details><summary><h3>데이터 변수명 지정 및 불균형 처리</h3></summary>
 - 데이터 변수명 지정
-  ```python
-  # 분석할 17개의 사고의 변수명 지정 
+  
+```python
+# 분석할 17개의 사고의 변수명 지정 
 col = ['MCHN_ACDNT_OCRN_CNT', 'ETC_OCRN_CNT', 'BLTRM_OCRN_CNT',
        'ACDNT_INJ_OCRN_CNT', 'EXCL_DISEASE_OCRN_CNT', 'VHC_ACDNT_OCRN_CNT',
        'HRFAF_OCRN_CNT', 'DRKNSTAT_OCRN_CNT', 'ANML_INSCT_ACDNT_OCRN_CNT',
@@ -21,7 +22,7 @@ for i in col: # 변수명 지정 --> data_각 사고 이름 ( ex) data_HRFAF_OCR
   
   
   
-  -사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경
+  - 사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경
   ```python
   from imblearn.under_sampling import NearMiss 
 nm = NearMiss()
@@ -55,11 +56,11 @@ for i in col:
 </details>
 
 <details><summary><h3>모델 선정과 파라미터 튜닝</h3></summary>
--기계사고에 대한 Pycaret 결과 예시
+- 기계사고에 대한 Pycaret 결과 예시
 
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
 
-각각의 사건에 대해 AutoML을 통해 점수를 확인하고 적합한 모델을 선정
+AutoML을 통해 점수를 확인하고 적합한 모델을 선정
 
 ```python
 RF_model = RandomForestClassifier(random_state = 10) # Random Forest
@@ -67,7 +68,38 @@ xgb_model = XGBClassifier(random_state = 10) # XGBoost
 cat_model = CatBoostClassifier(random_state = 10) # CatBoost
   
 ```
-  - 이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정
+이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정
+- 파라미터 예시
+```python
+  # CatBoost fit
+def CatBoost_model(X_train, y_train, X_test):
+    params = {
+            "iterations" : 1000,
+            "learning_rate" : 0.002,
+            "depth" : 6,
+            "l2_leaf_reg" : 3,
+            "model_size_reg" : 0.5,
+            "rsm" : 1,
+            "loss_function" : "Logloss",
+            "border_count" : 254,
+            "feature_border_type" : "GreedyLogSum",
+            "leaf_estimation_iterations" : 10,
+            "leaf_estimation_method" : 'Newton',
+            "class_weights" :None,
+            "random_strength" :1,
+            "eval_metric" : "Logloss",
+            "boosting_type" :"Plain",
+            "task_type" :"CPU",
+            "subsample" : 0.8,
+            "grow_policy" : "SymmetricTree",
+            "min_data_in_leaf" :1,
+            "max_leaves" :64,
+             }
+    CBCM = CatBoostClassifier(**params, random_state = 10)
+    CBCM.fit(X_train, y_train)
+    return CBCM
+```
+  
   
 </details>
 
