@@ -1,7 +1,26 @@
 # 데이터 모델링
 
-<details><summary><h3>데이터 불균형 처리</h3></summary>
+<details><summary><h3>데이터 변수명 지정 및 불균형 처리</h3></summary>
+- 데이터 변수명 지정
+  ```python
+  # 분석할 17개의 사고의 변수명 지정 
+col = ['MCHN_ACDNT_OCRN_CNT', 'ETC_OCRN_CNT', 'BLTRM_OCRN_CNT',
+       'ACDNT_INJ_OCRN_CNT', 'EXCL_DISEASE_OCRN_CNT', 'VHC_ACDNT_OCRN_CNT',
+       'HRFAF_OCRN_CNT', 'DRKNSTAT_OCRN_CNT', 'ANML_INSCT_ACDNT_OCRN_CNT',
+       'FLPS_ACDNT_OCRN_CNT', 'PDST_ACDNT_OCRN_CNT', 'LACRTWND_OCRN_CNT',
+       'MTRCYC_ACDNT_OCRN_CNT', 'DRV_ACDNT_OCRN_CNT', 'BCYC_ACDNT_OCRN_CNT',
+       'POSNG_OCRN_CNT', 'FALLING_OCRN_CNT']
 
+for i in col: # 변수명 지정 --> data_각 사고 이름 ( ex) data_HRFAF_OCRN_CNT )
+    globals()["data_{}".format(i)] = pd.DataFrame()
+    globals()["data_{}".format(i)] = final_DF.iloc[:,18:] # X 값
+    globals()["data_{}".format(i)]["GRID_ID"] = final_DF["GRID_ID"]
+    globals()["data_{}".format(i)]["label"] = final_DF[i] # 라벨 넣기
+  ```
+  
+  
+  
+  
   -사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경
   ```python
   from imblearn.under_sampling import NearMiss 
@@ -35,19 +54,20 @@ for i in col:
   
 </details>
 
-<details><summary><h3>모델 선정 by Pycaret(AutoML)과 파라미터 튜닝</h3></summary>
+<details><summary><h3>모델 선정과 파라미터 튜닝</h3></summary>
 -기계사고에 대한 Pycaret 결과 예시
 
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
 
 각각의 사건에 대해 AutoML을 통해 점수를 확인하고 적합한 모델을 선정
 
-```
-# 각각의 모델 이름
+```python
 RF_model = RandomForestClassifier(random_state = 10) # Random Forest
 xgb_model = XGBClassifier(random_state = 10) # XGBoost
 cat_model = CatBoostClassifier(random_state = 10) # CatBoost
+  
 ```
+  - 이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정
   
 </details>
 
@@ -57,9 +77,12 @@ cat_model = CatBoostClassifier(random_state = 10) # CatBoost
 ![image](https://user-images.githubusercontent.com/111345469/224696625-7591d0bc-0fda-4b2e-9d15-c0771ff88ae6.png)
 
  -# 기계사고 모델 confusion
-
+![image](https://user-images.githubusercontent.com/111345469/224699475-2e1272d8-f6f1-4586-a353-34f385565a4d.png)
 
 -# 기계사고 모델 feature importance
-
- -# 기타사고 모델 점수
+![image](https://user-images.githubusercontent.com/111345469/224699585-b1177baf-a8a6-430c-bad4-63d5175b5806.png)
+노인 인구 밀집 지역에 많은 출동이 있었음을 알 수 있다.
+  
+  위와 같은 작업을 각 사건에 대해서 진행..
+  
 </details>
