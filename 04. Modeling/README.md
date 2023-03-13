@@ -17,9 +17,13 @@ for i in col: # 변수명 지정 --> data_각 사고 이름 ( ex) data_HRFAF_OCR
     globals()["data_{}".format(i)] = final_DF.iloc[:,18:] # X 값
     globals()["data_{}".format(i)]["GRID_ID"] = final_DF["GRID_ID"]
     globals()["data_{}".format(i)]["label"] = final_DF[i] # 라벨 넣기
+  
+  
   ```
   
   
+  
+ 
   
   
   - 사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경
@@ -56,6 +60,7 @@ for i in col:
 </details>
 
 <details><summary><h3>모델 선정과 파라미터 튜닝</h3></summary>
+  
 - 기계사고에 대한 Pycaret 결과 예시
 
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
@@ -104,17 +109,18 @@ def CatBoost_model(X_train, y_train, X_test):
 </details>
 
 <details><summary><h3>모델 학습 평가</h3></summary>
--# 기계사고 모델 roc_curve
+- 기계사고 모델 roc_curve
   
 ![image](https://user-images.githubusercontent.com/111345469/224696625-7591d0bc-0fda-4b2e-9d15-c0771ff88ae6.png)
 
- -# 기계사고 모델 confusion
+ - 기계사고 모델 confusion
 ![image](https://user-images.githubusercontent.com/111345469/224699475-2e1272d8-f6f1-4586-a353-34f385565a4d.png)
 
--# 기계사고 모델 feature importance
+- 기계사고 모델 feature importance
 ![image](https://user-images.githubusercontent.com/111345469/224699585-b1177baf-a8a6-430c-bad4-63d5175b5806.png)
-노인 인구 밀집 지역에 많은 출동이 있었음을 알 수 있다.
+
+  노인 인구 밀집 지역에 많은 출동이 있었음을 알 수 있다.
   
-  위와 같은 작업을 각 사건에 대해서 진행..
+  (위와 같은 작업을 각 사건에 대해서 진행)
   
 </details>
