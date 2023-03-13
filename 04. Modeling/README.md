@@ -66,14 +66,14 @@ for i in col:
   
 기계사고에 대한 Pycaret 결과 예시
 
-
+- 사용할 모델트리스트
 ```python
 RF_model = RandomForestClassifier(random_state = 10) # Random Forest
 xgb_model = XGBClassifier(random_state = 10) # XGBoost
 cat_model = CatBoostClassifier(random_state = 10) # CatBoost
   
 ```
-이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정
+이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정 진행
   
 - 파라미터 예시
 ```python
