@@ -33,7 +33,7 @@ nm = NearMiss()
 
 rus = RandomUnderSampler(random_state=0, sampling_strategy=0.7)
                          
-        #                  {
+                          {
         # 0: int(globals()["data_{}".format(i)][globals()["data_{}".format(i)]["label"] == 1].shape[0]*1.5),
         # 1: globals()["data_{}".format(i)][globals()["data_{}".format(i)]["label"] == 1].shape[0]})
 
@@ -74,6 +74,7 @@ cat_model = CatBoostClassifier(random_state = 10) # CatBoost
   
 ```
 이후 GridSearchCV 및 RandomSearchCV을 통해 파라미터 수정
+  
 - 파라미터 예시
 ```python
   # CatBoost fit
