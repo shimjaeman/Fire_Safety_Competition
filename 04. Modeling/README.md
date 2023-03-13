@@ -1,7 +1,8 @@
 # 데이터 모델링
 
 <details><summary><h3>데이터 변수명 지정 및 불균형 처리</h3></summary>
-- 데이터 변수명 지정
+  
+- **데이터 변수명 지정**
   
 ```python
 # 분석할 17개의 사고의 변수명 지정 
@@ -26,7 +27,7 @@ for i in col: # 변수명 지정 --> data_각 사고 이름 ( ex) data_HRFAF_OCR
  
   
   
-  - 사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경
+  - **사건이 발생하지 않은 경우가 월등히 많아 undersampling 처리 후 변수명 변경**
   ```python
   from imblearn.under_sampling import NearMiss 
 nm = NearMiss()
@@ -61,11 +62,11 @@ for i in col:
 
 <details><summary><h3>모델 선정과 파라미터 튜닝</h3></summary>
   
-- 기계사고에 대한 Pycaret 결과 예시
 
+- **AutoML을 통해 점수를 확인하고 적합한 모델을 선정**
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
+기계사고에 대한 Pycaret 결과 예시
 
-AutoML을 통해 점수를 확인하고 적합한 모델을 선정
 
 ```python
 RF_model = RandomForestClassifier(random_state = 10) # Random Forest
