@@ -48,4 +48,6 @@
   * 유동인구가 없거나 사건이 발생하지 않은 지역을 제외하다 보니 해당 지역의 사고 발생 예측이 어려웠습니다.
 
 ## 참고논문 및 사이트
-  * 
+  * XGBoost : https://xgboost.readthedocs.io/en/stable/
+  * RandomForestClassifier : https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+  * CatBoost : https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier
