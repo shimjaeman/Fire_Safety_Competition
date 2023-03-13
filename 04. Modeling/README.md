@@ -37,7 +37,9 @@ for i in col:
 
 <details><summary><h3>모델 선정 by Pycaret(AutoML)과 파라미터 튜닝</h3></summary>
 -기계사고에 대한 Pycaret 결과 예시
+
 ![image](https://user-images.githubusercontent.com/111345469/224694243-b8acd554-0898-423b-80e9-948ba9f719ad.png)
+
 각각의 사건에 대해 AutoML을 통해 점수를 확인하고 적합한 모델을 선정
 
 ```
